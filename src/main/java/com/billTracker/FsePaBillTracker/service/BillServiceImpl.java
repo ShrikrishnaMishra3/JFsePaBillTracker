@@ -1,5 +1,5 @@
 package com.billTracker.FsePaBillTracker.service;
-
+ 
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class BillServiceImpl implements BillService {
 			
 		repository.findAll().forEach(bill -> {
 			BillTrackerDetailsDTO billDTO = new BillTrackerDetailsDTO();
-			billDTO.setId(bill.getId());
+			//billDTO.setId(bill.getId());
 			billDTO.setTitle(bill.getTitle());
 			billDTO.setCategory(bill.getCategory());
 			billDTO.setAmount(bill.getAmount());
@@ -43,7 +43,7 @@ public class BillServiceImpl implements BillService {
 	public BillTrackerDetailsDTO addBill(BillTrackerDetailsDTO bill) {
 
 		BillTrackerDetails bil = new BillTrackerDetails();
-		bil.setId(bill.getId());
+		//bil.setId(bill.getId());
 		bil.setCategory(bil.getCategory());
 		bil.setTitle(bill.getTitle());
 		bil.setAmount(bill.getAmount());
@@ -58,7 +58,7 @@ public class BillServiceImpl implements BillService {
 	@Override
 	public BillTrackerDetailsDTO deleteBill(BillTrackerDetailsDTO bill) {
 		BillTrackerDetails bil = new BillTrackerDetails();
-		bil.setId(bill.getId());
+		//bil.setId(bill.getId());
 		bil.setCategory(bil.getCategory());
 		bil.setTitle(bill.getTitle());
 		bil.setAmount(bill.getAmount());
@@ -73,7 +73,7 @@ public class BillServiceImpl implements BillService {
 	@Override
 	public Long updateBill(BillTrackerDetailsDTO bill) {
 		BillTrackerDetails bil = new BillTrackerDetails();
-		bil.setId(bill.getId());
+		//bil.setId(bill.getId());
 		bil.setCategory(bil.getCategory());
 		bil.setTitle(bill.getTitle());
 		bil.setAmount(bill.getAmount());
@@ -81,14 +81,14 @@ public class BillServiceImpl implements BillService {
 		bil.setDueDate(bill.getDueDate());
 		bil.setPad(bill.getPad());
 		bil.setUnpad(bill.getUnpad());
-		repository.updateBill(bil);
+		repository.save(bil);
 		return bill.getId();
 
 	}
 	@Override
 	public BillTrackerDetailsDTO createBill(BillTrackerDetailsDTO bill) {
 		BillTrackerDetails bil = new BillTrackerDetails();
-		bil.setId(bill.getId());
+		//bil.setId(bill.getId());
 		bil.setCategory(bil.getCategory());
 		bil.setTitle(bill.getTitle());
 		bil.setAmount(bill.getAmount());
@@ -96,7 +96,7 @@ public class BillServiceImpl implements BillService {
 		bil.setDueDate(bill.getDueDate());
 		bil.setPad(bill.getPad());
 		bil.setUnpad(bill.getUnpad());
-		repository.createBill(bil);
+		repository.save(bil);
 		return bill;
 
 	

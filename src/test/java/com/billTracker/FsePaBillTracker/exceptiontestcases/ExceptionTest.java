@@ -1,11 +1,12 @@
 package com.billTracker.FsePaBillTracker.exceptiontestcases;
 
+import static com.billTracker.FsePaBillTracker.utilityclasses.TestUtils.currentTest;
+import static com.billTracker.FsePaBillTracker.utilityclasses.TestUtils.exceptionTestFile;
+import static com.billTracker.FsePaBillTracker.utilityclasses.TestUtils.yakshaAssert;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
-import static org.mockito.Mockito.*;
-import static com.billTracker.FsePaBillTracker.utilityclasses.TestUtils.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -25,24 +26,21 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.billTracker.FsePaBillTracker.controller.BillController;
 import com.billTracker.FsePaBillTracker.dtos.BillTrackerDetailsDTO;
 import com.billTracker.FsePaBillTracker.service.BillServiceImpl;
-
 import com.billTracker.FsePaBillTracker.utilityclasses.MasterData;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(SpringRunner.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 @WebMvcTest(BillController.class)
-public class ExceptionTest {
+class ExceptionTest {
 
 	@Autowired
 	private MockMvc mockMvc;
 	
 	@MockBean
 	private BillServiceImpl billServiceImpl;
-	
 	@Test
-	public void testupdateBillException() throws Exception {
-		
+	void testupdateBillException() throws Exception  {
 		BillTrackerDetailsDTO billTrackerDetailsDTO = MasterData.getBillTrackerDetailsDTO();
 		billTrackerDetailsDTO.setTitle("phone");
 		billTrackerDetailsDTO.setCategory("new");
@@ -61,11 +59,10 @@ public class ExceptionTest {
 		yakshaAssert(currentTest(), 
 		(result.getResponse().getStatus() == HttpStatus.BAD_REQUEST.value() ? "true" : "false"), 
 		exceptionTestFile);
+
 	}
-	
 	@Test
-	public  void testDeleteBillException() throws Exception{
-		
+	void testDeleteBillException() throws Exception {
 		
 		BillTrackerDetailsDTO billTrackerDetailsDTO = MasterData.getBillTrackerDetailsDTO();
 		billTrackerDetailsDTO.setTitle("phone");
@@ -84,5 +81,8 @@ public class ExceptionTest {
 		yakshaAssert(currentTest(), 
 		(result.getResponse().getStatus() == HttpStatus.NOT_FOUND.value() ? "true" : "false"), 
 		exceptionTestFile);
+		
+		
 	}
+
 }

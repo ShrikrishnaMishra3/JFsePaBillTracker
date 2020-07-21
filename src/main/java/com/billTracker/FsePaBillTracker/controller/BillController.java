@@ -30,10 +30,6 @@ import com.billTracker.FsePaBillTracker.dtos.BillTrackerDetailsDTO;
 import com.billTracker.FsePaBillTracker.entitys.BillTrackerDetails;
 import com.billTracker.FsePaBillTracker.service.BillService;
 
-
-
-
-
 @RestController
 public class BillController {
 

@@ -15,7 +15,8 @@ import lombok.Data;
 public class BillTrackerDetailsDTO {
 
 
-    private Long Id;
+
+	private Long Id;
 
 	@Length(min = 5, max = 30)
 	@NotNull
@@ -25,7 +26,7 @@ public class BillTrackerDetailsDTO {
 	@NotNull
 	private String category;
 
-	@Length(min = 3, max = 25)
+	
 	private double amount;
 
 	@Length(min = 1, max = 25)

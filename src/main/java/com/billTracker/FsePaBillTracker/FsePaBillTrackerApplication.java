@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
-@SpringBootApplication(scanBasePackages = "com.billTracker.FsePaBillTracker")
-@EnableJpaRepositories(basePackages = "com.billTracker.FsePaBillTracker.repo")
-@EntityScan("com.billTracker.FsePaBillTracker.model")
+@SpringBootApplication
 public class FsePaBillTrackerApplication {
 
 	public static void main(String[] args) {

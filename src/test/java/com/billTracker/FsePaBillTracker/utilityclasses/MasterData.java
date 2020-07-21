@@ -8,7 +8,7 @@ public class MasterData {
 	public static BillTrackerDetailsDTO getBillTrackerDetailsDTO() {
 
 		BillTrackerDetailsDTO details = new BillTrackerDetailsDTO();
-		details.setId(1l);
+		/* details.setId(1l); */
 		details.setTitle("phone");
 		details.setCategory("nokika");
 		details.setAmount(4564);

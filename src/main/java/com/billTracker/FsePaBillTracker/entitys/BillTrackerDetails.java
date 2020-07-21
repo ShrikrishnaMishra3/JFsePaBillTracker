@@ -3,9 +3,11 @@ package com.billTracker.FsePaBillTracker.entitys;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
+
 
 import lombok.Data;
 @Entity
@@ -13,7 +15,8 @@ import lombok.Data;
 @Data
 public class BillTrackerDetails {
 
-			@Id
+			@javax.persistence.Id
+			@GeneratedValue(strategy = GenerationType.IDENTITY)
 			private Long  Id;	
 			private String title;
 			private String category;

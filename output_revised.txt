@@ -1,0 +1,4 @@
+
+testallbilles=true
+testaddBill=false
+deleteBill=true
