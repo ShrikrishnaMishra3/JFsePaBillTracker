@@ -43,7 +43,7 @@ class EntityValidationTest {
 	}
 
 	@Test
-	void test1() throws Exception {
+	void testTitle() throws Exception {
 		BillTrackerDetailsDTO billTrackerDetailsDTO = MasterData.getBillTrackerDetailsDTO();
 		billTrackerDetailsDTO.setTitle("phone");
 		Set<ConstraintViolation<BillTrackerDetailsDTO>> violations = validator.validate(billTrackerDetailsDTO);
@@ -52,7 +52,7 @@ class EntityValidationTest {
 	}
 
 	@Test
-	void test2() throws Exception {
+	void testAmount() throws Exception {
 		BillTrackerDetailsDTO billTrackerDetailsDTO = MasterData.getBillTrackerDetailsDTO();
 		billTrackerDetailsDTO.setAmount(4564);
 		Set<ConstraintViolation<BillTrackerDetailsDTO>> violations = validator.validate(billTrackerDetailsDTO);
@@ -61,7 +61,7 @@ class EntityValidationTest {
 	}
 
 	@Test
-	void test3() throws Exception {
+	void testCategory() throws Exception {
 		BillTrackerDetailsDTO billTrackerDetailsDTO = MasterData.getBillTrackerDetailsDTO();
 		billTrackerDetailsDTO.setCategory("new");
 		Set<ConstraintViolation<BillTrackerDetailsDTO>> violations = validator.validate(billTrackerDetailsDTO);
