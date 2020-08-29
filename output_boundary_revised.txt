@@ -1,4 +1,4 @@
 
-test1=true
-test2=true
-test3=true
+testTitle=true
+testCategory=true
+testAmount=true
